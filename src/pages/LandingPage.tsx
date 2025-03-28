@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FileText, Brain, Users, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card';
 
 const features = [
@@ -82,18 +82,22 @@ const LandingPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {features.map((feature, index) => (
               <Card key={index} className="neumorphic-card border-none h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                <CardContent className="p-6 flex flex-row items-start space-x-4">
-                  <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
-                    {feature.icon}
-                  </div>
-                  <div className="text-left">
-                    <h3 className="text-xl font-medium mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground mb-4">{feature.description}</p>
-                    <Button asChild variant="outline" className="w-full mt-2">
-                      <Link to={feature.link}>
+                <CardContent className="p-6">
+                  <div className="flex flex-col h-full">
+                    <div className="flex items-start space-x-4 mb-4">
+                      <div className="bg-primary/10 rounded-full p-3 flex items-center justify-center flex-shrink-0">
+                        {feature.icon}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-medium">{feature.title}</h3>
+                      </div>
+                    </div>
+                    <p className="text-muted-foreground mb-4 flex-grow">{feature.description}</p>
+                    <Button asChild variant="outline" className="w-full mt-auto rounded-full">
+                      <Link to={feature.link} className="flex items-center justify-center">
                         Explore {feature.title} <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>

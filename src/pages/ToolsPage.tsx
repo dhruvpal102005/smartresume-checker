@@ -45,18 +45,20 @@ const ToolsPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {tools.map((tool, index) => (
           <Card key={index} className="neumorphic-card border-none overflow-hidden h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-            <CardContent className="p-8 flex flex-row items-start space-x-6">
-              <div className="bg-primary/10 rounded-full w-20 h-20 flex items-center justify-center flex-shrink-0">
-                {tool.icon}
-              </div>
-              <div className="text-left">
-                <h2 className="text-2xl font-semibold mb-2">{tool.title}</h2>
-                <p className="text-muted-foreground mb-4">{tool.description}</p>
-                <Button asChild className="rounded-full transition-all duration-300 hover:scale-105">
-                  <Link to={tool.link} className="flex items-center">
-                    Use {tool.title} <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+            <CardContent className="p-6">
+              <div className="flex items-start space-x-4">
+                <div className="bg-primary/10 rounded-full p-4 flex items-center justify-center flex-shrink-0">
+                  {tool.icon}
+                </div>
+                <div className="flex-1">
+                  <h2 className="text-2xl font-semibold mb-2">{tool.title}</h2>
+                  <p className="text-muted-foreground mb-4">{tool.description}</p>
+                  <Button asChild className="rounded-full w-full sm:w-auto transition-all duration-300 hover:scale-105">
+                    <Link to={tool.link} className="flex items-center justify-center">
+                      Use {tool.title} <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
               </div>
             </CardContent>
           </Card>
