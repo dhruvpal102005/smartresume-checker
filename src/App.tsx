@@ -12,6 +12,12 @@ import ResultsPage from "./pages/ResultsPage";
 import ComparisonPage from "./pages/ComparisonPage";
 import NotFound from "./pages/NotFound";
 
+// Import new tool-specific pages
+import ResumeParserPage from "./pages/ResumeParserPage";
+import ResumeScoringPage from "./pages/ResumeScoringPage";
+import SkillMatchingPage from "./pages/SkillMatchingPage";
+import CandidateComparisonPage from "./pages/CandidateComparisonPage";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -27,6 +33,13 @@ const App = () => (
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/results" element={<ResultsPage />} />
             <Route path="/compare" element={<ComparisonPage />} />
+            
+            {/* New tool-specific routes */}
+            <Route path="/resume-parser" element={<ResumeParserPage />} />
+            <Route path="/resume-scoring" element={<ResumeScoringPage />} />
+            <Route path="/skill-matching" element={<SkillMatchingPage />} />
+            <Route path="/candidate-comparison" element={<CandidateComparisonPage />} />
+            
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

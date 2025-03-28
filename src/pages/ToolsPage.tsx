@@ -10,25 +10,25 @@ const tools = [
     icon: <FileText className="h-12 w-12 text-primary" />,
     title: 'Resume Parser',
     description: 'Extract key information from resumes in any format. Get structured data for candidates in seconds.',
-    link: '/upload'
+    link: '/resume-parser'
   },
   {
     icon: <Award className="h-12 w-12 text-primary" />,
     title: 'Resume Scoring',
     description: 'Rank candidates based on job fit using our advanced AI algorithm with customizable criteria.',
-    link: '/upload'
+    link: '/resume-scoring'
   },
   {
     icon: <Code className="h-12 w-12 text-primary" />,
     title: 'Skill Matching',
     description: 'Compare required job skills with candidate profiles to find the perfect match for your positions.',
-    link: '/upload'
+    link: '/skill-matching'
   },
   {
     icon: <Users className="h-12 w-12 text-primary" />,
     title: 'Candidate Comparison',
     description: 'View candidates side-by-side and analyze their strengths and weaknesses to make informed decisions.',
-    link: '/upload'
+    link: '/candidate-comparison'
   }
 ];
 
