@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FileText, Award, Code, Users } from 'lucide-react';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { FileText, Award, Code, Users, ArrowRight } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
 const tools = [
@@ -44,23 +44,21 @@ const ToolsPage = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {tools.map((tool, index) => (
-          <Card key={index} className="neumorphic-card border-none overflow-hidden h-full">
-            <CardContent className="p-8">
-              <div className="flex flex-col space-y-4">
-                <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mb-2">
-                  {tool.icon}
-                </div>
-                <h2 className="text-2xl font-semibold">{tool.title}</h2>
-                <p className="text-muted-foreground">{tool.description}</p>
+          <Card key={index} className="neumorphic-card border-none overflow-hidden h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <CardContent className="p-8 flex flex-row items-start space-x-6">
+              <div className="bg-primary/10 rounded-full w-20 h-20 flex items-center justify-center flex-shrink-0">
+                {tool.icon}
+              </div>
+              <div className="text-left">
+                <h2 className="text-2xl font-semibold mb-2">{tool.title}</h2>
+                <p className="text-muted-foreground mb-4">{tool.description}</p>
+                <Button asChild className="rounded-full transition-all duration-300 hover:scale-105">
+                  <Link to={tool.link} className="flex items-center">
+                    Use {tool.title} <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </div>
             </CardContent>
-            <CardFooter className="px-8 pb-8 pt-0">
-              <Button asChild className="w-full rounded-full">
-                <Link to={tool.link}>
-                  Use {tool.title}
-                </Link>
-              </Button>
-            </CardFooter>
           </Card>
         ))}
       </div>
